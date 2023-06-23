@@ -9,8 +9,6 @@ services:
       - "8080:8080"
     volumes:
       - ./:/go/src/github.com/dip-dev/go-tutorial
-    env_file:
-      - build/app/env/.env.local
   mock:
     container_name: mock-server
     image: dipinc/go-tutorial-mock:latest
