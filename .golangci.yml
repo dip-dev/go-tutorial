@@ -1,0 +1,44 @@
+# ドキュメント https://golangci-lint.run/usage/configuration/
+run:
+  modules-download-mode: readonly
+  # exit code when at least one issue was found, default is 1
+  issues-exit-code: 1
+
+  # include test files or not, default is true
+  tests: true
+
+# output configuration options
+output:
+  # colored-line-number|line-number|json|tab|checkstyle|code-climate, default is "colored-line-number"
+  format: line-number
+
+linters:
+  disable-all: true
+  enable:
+    - govet
+    - gofmt
+    - goimports
+    - errcheck
+    - gosimple
+    - ineffassign
+    - typecheck
+    - unused
+    - bodyclose
+    - rowserrcheck
+    - staticcheck
+    - sqlclosecheck
+    - unconvert
+    - unparam
+    - wastedassign
+    - revive
+    - stylecheck
+
+# all available settings of specific linters
+linters-settings:
+  goimports:
+    # put imports beginning with prefix after 3rd-party packages;
+    # it's a comma-separated list of prefixes
+    local-prefixes: github.com/dip-dev
+
+issues:
+  exclude-rules:
